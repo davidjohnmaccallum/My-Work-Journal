@@ -2,7 +2,7 @@
 
 2 November 2018
 
-IT governance is important, especially in the area of security, architecture and design. Governance can also be unwelcome. Staff may not see the need for governance and may see it as an unwelcome intrustion into their projects. While governance teams should work hard to explain the reasons the requirements they put on project teams there is a need for a clear executive mandate that gives governance the necessary level of authority to carry out their function.
+IT governance is important, especially in the area of security, architecture and design. Governance can also be unwelcome. Staff may not see the need for governance and may see it as an unwelcome intrustion into their projects. While governance teams should work hard to explain the reasons behind the requirements they put on project teams, there is a need for a clear executive mandate that gives governance the necessary level of authority to carry out their function.
 
 # Obsession with NFRs
 
