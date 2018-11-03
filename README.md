@@ -1,3 +1,11 @@
+# Getting the Pyramid Right
+
+3 November 2018
+
+We were chatting a few months back about resource planning for a startup. I was arguing for hiring the most skilled people we could find. The more skills the better right? My colleague disagreed. He argued for more juniour resources. He reasoned that senior resources will all want to be involved in the design and decision making process. They don't want to be told what to do. This results in design debates around each design decision. A more junior resource on the other hand is eager to absorb the skills of the designer and appreciates being told what to do. 
+
+This reminded me of something we used to talk about on consulting projects: getting the resource pyramid right. Hiring too much skill and experience in the team can make the pyramid top heavy. Besides pushing up cost it also affects the ability to promote people within the organisation. If everyone is near the top there is not much space for juniors to move up.
+
 # The Importance of a Governance Mandate
 
 2 November 2018
