@@ -10,7 +10,7 @@ Software development is a new field. As a software developer I love reading desi
 
 I remember a gifted Enterprise Architect saying to me once, "my problem is, I think I am right". In his case I think the problem was that other people did not realise that he was right.
 
-I think there is a principle about pragmatism here. Businesses do not seek ideal solutions. They "satisfice" or follow the 80/20 rule. To find a perfect solution simply costs too much money. While your architects are debating the pros and cons of NodeJS vs .Net Core your competition has knocked together a Java Servlets product that does what the customer requires. Don't get me wrong, a bad architecture has consequences. My point is, get yourself a good architect and then give him or her the authority to make design decisions. If you seek consensus, you will move very slowly and end up with patchwork of compromises.
+I think there is a principle about pragmatism here. Businesses do not seek ideal solutions. They "satisfice" or follow the 80/20 rule. To find a perfect solution simply costs too much money. While your architects are debating the pros and cons of NodeJS vs .Net Core your competition has knocked together a Java Servlets product that does what the customer requires. Don't get me wrong, a bad architecture has consequences. My point is, get yourself a good architect and then give him or her the authority to make design decisions. If you seek consensus, you will move very slowly and end up with a patchwork of compromises.
 
 # Getting the Pyramid Right
 
