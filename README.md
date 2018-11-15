@@ -1,3 +1,9 @@
+# Software development is an adolescent engineering discapline
+
+15 November 2018
+
+Software development is a new field. As a software developer I love reading design patterns and architecture books. I love the way they look at the problems I face day to day objectively. Grouping them into categories of problems. Identifying alternative solutions with pros and cons. As our profession develops into a mature engineering discapline, training can be standardised producing engineers with a common language and set of principles. We can spend less time fussing with semantics and more time on solving problems.
+
 # My problem is, I think I am right
 
 9 November 2018
