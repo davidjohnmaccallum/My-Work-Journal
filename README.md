@@ -51,7 +51,7 @@ Back office user interfaces are an important way of transferring system ownershi
 * Have you ever taken over the development of a large complex system?
 * Have you ever had to get up to speed on a large existing code base? How long did it take you before you could start making changes to the system?
 * Have you ever had to work with code other people had written?
-
+* Describe several software development patters. When would you use them?
 
 # Security Hardening Our Network
 
