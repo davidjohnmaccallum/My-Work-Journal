@@ -30,7 +30,7 @@ IT governance is important, especially in the area of security, architecture and
 
 30 October 2018
 
-Developers can fall in the trap of treating NFRs (eg program efficiency, elegant code, excellent documentation, smooth build pipeline, zero errors) as more important than FRs. NFRs and FRs need to be prioritised against Business Outcomes.
+Developers can fall in the trap of treating Non-Functional Requirements (eg program efficiency, elegant code, excellent documentation, smooth build pipeline, zero errors) as more important than Functional  Reuqirements. NFRs and FRs need to be prioritised against Business Outcomes.
 
 # Making work visible
 
