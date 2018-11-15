@@ -57,8 +57,8 @@ Back office user interfaces are an important way of transferring system ownershi
 
 23 October 2018
 
-1. Restrict Security Groups to least access
-1. Consolidate log files in ElasticSearch using filebeat
+1. Restrict internal firewall rules to least access
+1. Consolidate log files
 1. Keep everything very neat and tidy
 
 # Separating container from config is a good idea
