@@ -73,3 +73,11 @@ When you have to make infrastrcuture changes that change micro service config yo
 
 1. The domain model. This is the conceptual skeleton of your software. It links your software to the world in which it is expected to deliver value. Your team will use this skeleton to guide their work. Designers will design off this skeleton. Developers will code off the skeleton. Processes will grow around the skeleton. If a few months down the line you realise that your lovely quadruped skeleton should actually be a biped this will have a massive ripple effect.
 1. Your documentation repository. This is a reflection of your business operating model. Decide what documentation your business needs based on your operating model and create a folder structure that is unlikely to change. Documentation is best laid down fresh. For example, an Incident Report is best written up immediately after the incident has been resolved. Minutes of a meeting are best written up during the meeting. The implication of this is that people will only do the documentation that is implied by your documentation repositories folder structure. If you make fundamental changes to the folder structure it will be very difficult to retroactively produce the new documentation.
+
+# The tradgedy of the commons
+
+30 April 2019
+
+> The tragedy of the commons is a situation in a shared-resource system where individual users acting independently according to their own self-interest behave contrary to the common good of all users by depleting or spoiling that resource through their collective action. [Wikipedia](https://en.wikipedia.org/wiki/Tragedy_of_the_commons)
+
+Hence, private ownership. The same applies in a business. If I own the document/component/team/department and it is in a mess that says something about me. If, as a leader, you fail to delegate ownership. Everything is a reflection of you. 
