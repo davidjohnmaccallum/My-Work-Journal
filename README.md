@@ -67,3 +67,9 @@ Back office user interfaces are an important way of transferring system ownershi
 
 When you have to make infrastrcuture changes that change micro service config you will be thankful that you kept your micro service and its deployment config separate. In the past few weeks I have had to move our database twice and our message broker once. In all of these cases the micro services have not changed, only the infrastructure they run on. In this case what we want is to redeploy our micro services with new configuration (eg DB connection string) but keep the micro service versions unchanged. If a change in your config causes a new version of your micro service to be built you cannot do this.
 
+# Two things you should get right from the start
+
+30 April 2019
+
+1. The domain model. This is the conceptual skeleton of your software. It links your software to the world in which it is expected to deliver value. Your team will use this skeleton to guide their work. Designers will design off this skeleton. Developers will code off the skeleton. Processes will grow around the skeleton. If a few months down the line you realise that your lovely quadruped skeleton should actually be a biped this will have a massive ripple effect.
+1. Your documentation repository. This is a reflection of your business operating model. Decide what documentation your business needs based on your operating model and create a folder structure that is unlikely to change. Documentation is best laid down fresh. For example, an Incident Report is best written up immediately after the incident has been resolved. Minutes of a meeting are best written up during the meeting. The implication of this is that people will only do the documentation that is implied by your documentation repositories folder structure. If you make fundamental changes to the folder structure it will be very difficult to retroactively produce the new documentation.
