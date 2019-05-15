@@ -80,4 +80,10 @@ When you have to make infrastrcuture changes that change micro service config yo
 
 > The tragedy of the commons is a situation in a shared-resource system where individual users acting independently according to their own self-interest behave contrary to the common good of all users by depleting or spoiling that resource through their collective action. [Wikipedia](https://en.wikipedia.org/wiki/Tragedy_of_the_commons)
 
-Hence, private ownership. The same applies in a business. If I own the document/component/team/department and it is in a mess that says something about me. If, as a leader, you fail to delegate ownership. Everything is a reflection of you. 
+Hence, private ownership. The same applies in a business. If I own the document/component/team/department and it is in a mess that says something about me. If, as a leader, you fail to delegate ownership. Everything is a reflection of you.
+
+# Data lifecycle hooks
+
+15 May 2019
+
+Very useful to have a beforeCreate, afterCreate, beforeUpdate, afterUpdate, beforeDelete, afterDelete hook for your data. I am thinking specifically of data you would store in a database. Ideally the hooks should give you the data value before and after the change and the before hooks should allow you to cancel the change.
