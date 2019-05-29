@@ -87,3 +87,13 @@ Hence, private ownership. The same applies in a business. If I own the document/
 15 May 2019
 
 Very useful to have a beforeCreate, afterCreate, beforeUpdate, afterUpdate, beforeDelete, afterDelete hook for your data. I am thinking specifically of data you would store in a database. Ideally the hooks should give you the data value before and after the change and the before hooks should allow you to cancel the change.
+
+# Mind your own protocol
+
+29 May 2019
+
+I think REST web services have encouraged me to make a mistake. REST web services use the HTTP protocol verbs GET, POST, PUT and DELETE to represent read, create, update and delete in your application. This creates a coupling between your application and the underlying protocol. This can be fine for simple CRUD operations but very often I find myself writing a read operation, for example a search operation, where I would like to include complex parameters in a JSON request body. In this case I break the read/GET convention and use a POST.
+
+Here is another example of this mistake. I am logging to a central log server using syslog. Syslog output includes the log time, program name and log message. So I decided to use syslog log time and program name in my application logs. Only later did I realise that the syslog time was not millisecond precision and sometimes I don't want the program name to be the executable name used by syslog. Also, what if want to swap out syslog for a different logger. The coupling to the syslog fields makes this more difficult.
+
+The moral of the story, don't create couplings into the underlying protocol layers on which your application runs.
