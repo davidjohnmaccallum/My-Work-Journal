@@ -97,3 +97,9 @@ I think REST web services have encouraged me to make a mistake. REST web service
 Here is another example of this mistake. I am logging to a central log server using syslog. Syslog output includes the log time, program name and log message. So I decided to use syslog log time and program name in my application logs. Only later did I realise that the syslog time was not millisecond precision and sometimes I don't want the program name to be the executable name used by syslog. Also, what if want to swap out syslog for a different logger. The coupling to the syslog fields makes this more difficult.
 
 The moral of the story, don't create couplings into the underlying protocol layers on which your application runs.
+
+# Detailed plans make context switching easier to deal with
+
+2 July 2019
+
+I am restarting a piece of half finished work today. The work had to be parked because a piece of billable work came in and we needed the money. So my first task this morning is "Where was I when I stopped this work?". If the work has been parked for a longer period the question might be "What was the reason for this work in the first place?". This is where having a detailed plan really helps. At the time the detailed plan might have seemed like overkill, but it makes picking up the pieces days, weeks or months later much easier.  
