@@ -1,4 +1,4 @@
-# Software development is an adolescent engineering discapline
+# Software development is an young engineering discapline
 
 15 November 2018
 
