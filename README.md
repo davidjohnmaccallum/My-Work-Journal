@@ -141,3 +141,76 @@ I had just joined a new team dev team. There were four of us devs. Before I join
 The first frustration was trying to get the Ionic app to build on my laptop. `npm i`, oh my. The next thing I noticed is that our coding styles were very different. My colleague valued implementation simplicity whereas I valued interface simplicity ([The Rise of ``Worse is Better''](https://www.jwz.org/doc/worse-is-better.html)). I like my software to have a domain model and a layer of services. He preferred his software to have a simple, flat structure. He is an ENTP. His style of collaboration is immediate, passionate and flexible. I am an INTJ. I like to consider things in my own time and settle on the best way forward. The project ran way over schedule and the pressure mounted. Our relationship suffered. He felt that I was slowing him down. And he was right.
 
 Don't get me wrong. I really value team work and diversity within teams. Some of my best friendships have come through working with people in teams. Especially in the trenches on a tough project. But I definitely prefer teams with a clear division of labour. I think this is why we value loose coupling and separation of concerns in software design. Good fences make good neighbors. Dividing responsibilities in such a way that people can get on with their work and make the hundreds of small decisions required independently rather than having a discussion just makes work flow much better. Defining touch points clearly means team members know which decisions will affect other members of the team and therefore require a discussion.
+
+# Loose Coupling
+
+11 August 2019
+
+Think of components as pools of water connected by channels. A change is like dropping a pebble into one of the pools.
+
+# High Pressure vs Low Pressure Management
+
+11 August 2019
+
+From [Daniel Kahneman: Putting Your Intuition on Ice](https://fs.blog/knowledge-project/daniel-kahneman/).
+
+I love Daniel Kahneman's description of high pressure vs low pressure management approach. Imagine a spring, he said, if you want it to move forward you have two options. You can push it or you can remove obstacles from the front of it. If you push you will create pressure. If you remove obstacles you will relive pressure.
+
+I have experienced both management styles. The pushing from behind approach is unpleasant and creates resentment. The removing obstacles approach is a type of servant leadership. It helps to create a sustainable, happy team that performs well.
+
+# The Value of Change Tracking
+
+21 August 2019
+
+This week was set aside to test an app that a colleague has been working on. The testing has not gone well. People are making changes to backend services that the app depends on. Our CEO is frustrated. He is asking the following questions: "What changed?", "When did the system go down?", "Will this happen in production?", "How do we roll back?", "How can we be alerted when this happens?", "Do I have the correct version of the app installed?".
+
+The team have decided that DevOps practices like CI/CD and test automation are luxury that we cannot afford. I think this weeks experience shows that a thoughtful investment in automation goes a long way. Heroku, for example, is easy to use and quick to set up. It comes with a great CI/CD pipeline. "What changed? Who changed it? When did it change?" Just take a look at the commit log. "Can we roll back?" Yes. "What about alerts?" The Papertrail plugin can do that for us.
+
+# "You have to keep the whole system in your head!"
+
+21 August 2019
+
+I heard our tech lead complain today that he was having trouble trying to keep the whole system in his head. We are using AWS Lambda's and have opted for very fine grained microservices.
+
+It makes me think of what Sam Newman calls the golden rule in his book Building Microservices.
+
+> Without decoupling, everything breaks down for us. The golden rule: can you make a change to a service and deploy it by itself without changing anything else?
+
+The great thing about a microservices architecture is that you don't have to keep the whole system in your head. When you are working on a microservice all you have to keep in your head is that microservice and any contracts that it is bound to comply with.
+
+But as Sam Newman says, without decoupling everything breaks down. You loose the benefit of microservices and while still incurring all of the complexity of a distributed system.
+
+# Logs must tell a story
+
+21 August 2019
+
+A very talented developer I worked with came with this little gem.
+
+> Logs must tell a story. (Greg Erasmus)
+
+Logs can very quickly become full of noise. Here are some tips to help you keep your logs relevant and useful.
+
+- Publish logging standards. For example, "Log all errors. Log all domain object state changes as info. Log anything you like as debug."
+- Create a common logging lib with an implementation in each language you use. This makes it easier for the team to adhere to the standard.
+- Centralise your logs using a logging service like Loggly or Papertrail.
+- Make it very easy to access the logs. Developers should be able to tail and filter the logs from the CLI using simple commands.
+- Make it easy for business users to access your logs. Embed them in user interfaces (eg domain object change logs, transaction activity logs). This is a great way to make the system more transparent to the business.
+- Use a correlation id to give your log messages context. This allows you to filter your logs and see all of the messages related to a given transaction regardless of which component generated the logs.
+
+# Testing shared libraries
+
+26 August 2019
+
+We have an npm library which we use in almost all of our code. The developer who created it chose to combine several concerns into a single lib (logging, database access, cache access, etc). Because of this the lib changes frequently. It has no tests. The team consider unit testing a waste of precious time. Every time a new version is released there is a very real risk of regression errors. As a result the other developers tend not to upgrade this lib until they are forced to because they need a new feature. The cost risk associated with the upgrade it hight and because the team do not create unit test regressions can slip in undetected.
+
+The moral of the story is write unit tests. At the very least write unit tests for shared libraries.
+
+Splitting this library up into several smaller more cohesive libs would have reduced the risk of regression. For example, upgrading the logging lib might cause a regression in your logging code but will not affect your database access code.
+
+# Test coverage
+
+26 June 2020
+
+What to test and how to test it is an interesting question. I recently watched an episode of the [The Boring Flutter Development Show](https://www.youtube.com/watch?v=bj-oMYyLZEY). The testing expert was saying what I have heard many times before. Most of your tests should be Unit Tests because they run quickly. Then he tried to demonstrate this using a typical mobile app. He really struggled because the mobile app did not have much in the way of business logic. The app, like many simple apps, was mainly concerned mainly with pulling data from a database and displaying.
+
+I think the advice around Unit Testing applies when you have logs of mappings, transformations and calculations in your code. I have used Unit Test a lot for financial calculations. I think it does not apply when you have a relatively straight forward app. In that case I think a Selenium style integration test is the way to go. It is simple to create and it provides great coverage with a few tests.
