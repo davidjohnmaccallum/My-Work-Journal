@@ -184,9 +184,9 @@ But as Sam Newman says, without decoupling everything breaks down. You loose the
 
 21 August 2019
 
-A very talented developer I worked with came with this little gem.
+A very talented developer I worked with came up with this little gem.
 
-> Logs must tell a story. (Greg Erasmus)
+> Logs must tell a story. <br>(Greg Erasmus)
 
 Logs can very quickly become full of noise. Here are some tips to help you keep your logs relevant and useful.
 
@@ -201,11 +201,49 @@ Logs can very quickly become full of noise. Here are some tips to help you keep 
 
 26 August 2019
 
-We have an npm library which we use in almost all of our code. The developer who created it chose to combine several concerns into a single lib (logging, database access, cache access, etc). Because of this the lib changes frequently. It has no tests. The team consider unit testing a waste of precious time. Every time a new version is released there is a very real risk of regression errors. As a result the other developers tend not to upgrade this lib until they are forced to because they need a new feature. The cost risk associated with the upgrade it hight and because the team do not create unit test regressions can slip in undetected.
+We have an npm library which we use in almost all of our code. The developer who created it chose to combine several concerns into a single lib (logging, database access, cache access, etc). As a result of this the lib changes frequently. It has no tests. The team consider unit testing a waste of precious time. Every time a new version is released there is a very real risk of regression errors. As a result the other developers tend not to upgrade this lib until they are forced to because they need a new feature. The cost risk associated with the upgrade it hight and because the team do not create unit test regressions can slip in undetected.
 
-The moral of the story is write unit tests. At the very least write unit tests for shared libraries.
+I believe very strongly in test automation. Especially for single points of failure like this lib.
 
-Splitting this library up into several smaller more cohesive libs would have reduced the risk of regression. For example, upgrading the logging lib might cause a regression in your logging code but will not affect your database access code.
+Splitting this library up into several smaller, more cohesive libs would also have reduced the risk of regression. For example, upgrading the logging lib might cause a regression in your logging code but will not affect your database access code.
+
+# Why I like schemaless databases
+
+28 August 2019
+
+I have found schemaless, document databases to be a big productivity boost. I have been thinking about why this is.
+
+On my current project our stack is a SQL database, NodeJS and Ionic. Because the SQL database requires you to define a schema we start the development process there creating DDL scripts. The data passes through the NodeJS layer with no validation and arrives in the Ionic (TypeScript) app where we tend not to define model classes but use the JavaScript objects directly. So the schema is implicit on the mid tier and on the client and it is explicit on the database.
+
+The problem with this arrangement is that there are many small schema changes during development. Every change requires a DDL change, a recreation of the schema and a change to the SQL statements used to access the data. This in addition to the client side changes which started it all.
+
+I prefer an architecture where the schema is explicit on the client (using model classes) and implicit on the mid tier and database. I find this quick and flexible.
+
+I think the reason why I prefer this approach is because I tend towards a microservices architecture in my programs. This architecture does not treat the database as a central ad hoc reporting tool. Rather, we build systems out of relatively small independent pieces called microservices. If a microservice needs to persist data it uses a private database. Therefore schema changes do not have knock on effects on other parts of the system.
+
+# Microservices and ad hoc reporting
+
+28 August 2019
+
+Following on from the thought above. Not having the ad hoc reporting capability of a central SQL database is a real drawback. In the past I have addressed this using an Elasticsearch instance as a data warehouse. I found this a bit limiting probably because of my Elasticsearch skills are not strong enough.
+
+I think the advantage of a SQL data warehouse is that SQL is such a ubiquitous skill. SQL joins are also very flexible. For a report it is normally not a problem if it takes ages to run.
+
+In future I think I would put in a SQL database to act as a data warehouse and put in place a framework to make creating ETL jobs really easy.
+
+# Microservices and decision making freedom
+
+28 August 2019
+
+As a developer I have always had a lot of decision making freedom in the small companies that I have been a part of. However, this is not so in the large companies I have worked at. By decision making I mean things like choice of tools and choice of architecture. In large companies I found that I had to move into management or architecture positions to get the same level of freedom.
+
+I recently found myself working as a developer in a small team where I had very little decision making freedom. I found this awful and I eventually resigned. This got me thinking about the effect that decision making freedom has on job satisfaction.
+
+I think that a microservice architecture can really help give this decision making freedom back to developers. This is because of the independence (loose coupling) within a microservice system. In a tightly coupled system more of the decisions that I have to make as a developer have an impact on my colleagues. This results in a lot of back and forth, which can be slow, or in decision making being centralised in an technical lead or architect role. In a loosely coupled system more of the decisions I make have no impact beyond the component I am working on. Therefore I can make them without consultation. Given the number of little decisions we have to make every day this can be a significant productivity gain.
+
+This does however come at the cost of consistency. However, in many cases some inconsistency in style is not a problem. By focusing attention on quality through things like standards and guidelines, a peer review or mentoring process, encouraging skill sharing, you can offset the problem of an inconsistent code base. And, of course, developers love learning. Another way to create consistency is through Domain Driven Design. The creation of a [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html) amongst team members will help the software remain consistent from a functional point of view.
+
+This implies that architects or CTOs, rather than having a top down decision making role, have an enabling role. Creating a framework within which the people they lead are empowered to make decisions.
 
 # Test coverage
 
