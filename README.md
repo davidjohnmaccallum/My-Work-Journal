@@ -245,6 +245,24 @@ This does however come at the cost of consistency. However, in many cases some i
 
 This implies that architects or CTOs, rather than having a top down decision making role, have an enabling role. Creating a framework within which the people they lead are empowered to make decisions.
 
+# Teams build software
+
+3 September 2019
+
+Teams build software. If you want to build great software, build great teams.
+
+# Developers are creative people
+
+3 September 2019
+
+Developers are creative people. Give them great tools. Give them as much freedom as possible. Make sure they understand the reasons behind constraints and are free to engineer them away.
+
+# Freeze!
+
+19 September 2019
+
+We had conflict in the team yesterday because a code freeze was violated. It makes me think, this is a conflict that should not happen. The business wanted stability so that they could coordinate activities like user acceptance testing. Development was under pressure to get work completed. And these two good goals conflicted. The underlying problem was tight coupling between products. Two products depended on the same backend service. One product needed a change made, both products were affected.
+
 # Test coverage
 
 26 June 2020
