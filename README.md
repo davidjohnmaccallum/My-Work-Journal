@@ -270,3 +270,13 @@ We had conflict in the team yesterday because a code freeze was violated. It mak
 What to test and how to test it is an interesting question. I recently watched an episode of the [The Boring Flutter Development Show](https://www.youtube.com/watch?v=bj-oMYyLZEY). The testing expert was saying what I have heard many times before. Most of your tests should be Unit Tests because they run quickly. Then he tried to demonstrate this using a typical mobile app. He really struggled because the mobile app did not have much in the way of business logic. The app, like many simple apps, was mainly concerned mainly with pulling data from a database and displaying.
 
 I think the advice around Unit Testing applies when you have logs of mappings, transformations and calculations in your code. I have used Unit Test a lot for financial calculations. I think it does not apply when you have a relatively straight forward app. In that case I think a Selenium style integration test is the way to go. It is simple to create and it provides great coverage with a few tests.
+
+# Cloud computing platforms are a byproduct
+
+14 August 2020
+
+Cloud computing platforms like AWS and GCP are byproducts. Neither Amazon nor Google set out to create cloud computing platforms. They created platforms to support thier core products and spun these off as byproducts. Google and Amzon are by no means average companies. For one thing they require massive scale. For another they employ some of the best talent in the business. 
+
+What are the implications of this for how we architect solutions on these platforms? If a bank, for example, decides to migrate its systems onto AWS they will have to change the way they architect their systems. Classical enterprise architectures (SQL, EJB, vertical scaling etc) and high scale consumer architectures (NoSQL, Microservices, horizontal scaling etc) are very different.
+
+It is interesting that a cloud computing platform like Heroku (not a byproduct) is designed for a monolitic architecture (Rails, PostgreSQL). For applications that do not require massive horizontal scalability monolitic systems are easier to build and reason about.
