@@ -280,3 +280,9 @@ Cloud computing platforms like AWS and GCP are byproducts. Neither Amazon nor Go
 What are the implications of this for how we architect solutions on these platforms? If a bank, for example, decides to migrate its systems onto AWS they will have to change the way they architect their systems. Classical enterprise architectures (SQL, EJB, vertical scaling etc) and high scale consumer architectures (NoSQL, Microservices, horizontal scaling etc) are very different.
 
 It is interesting that a cloud computing platform like Heroku (not a byproduct) is designed for a monolitic architecture (Rails, PostgreSQL). For applications that do not require massive horizontal scalability monolitic systems are easier to build and reason about.
+
+# Asking job applicants to do assignments builds buy in
+
+17 August 2020
+
+I am busy preparing for a test on HackerRank ahead of a job interview. I am noticing how the more I prepare the more I hope that I will get the job. I have invested time in this company now and I want it to pay off. I think it is a very good idea to ask applicants to complete programming assignments.
