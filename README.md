@@ -275,7 +275,7 @@ I think the advice around Unit Testing applies when you have logs of mappings, t
 
 14 August 2020
 
-Cloud computing platforms like AWS and GCP are byproducts. Neither Amazon nor Google set out to create cloud computing platforms. They created platforms to support thier core products and spun these off as byproducts. Google and Amzon are by no means average companies. For one thing they require massive scale. For another they employ some of the best talent in the business. 
+Cloud computing platforms like AWS and GCP are byproducts. Neither Amazon nor Google set out to create cloud computing platforms. They created platforms to support thier core products and spun these off as byproducts. Google and Amzon are by no means average companies. For one thing they require massive scale. For another they employ some of the best talent in the business.
 
 What are the implications of this for how we architect solutions on these platforms? If a bank, for example, decides to migrate its systems onto AWS they will have to change the way they architect their systems. Classical enterprise architectures (SQL, EJB, vertical scaling etc) and high scale consumer architectures (NoSQL, Microservices, horizontal scaling etc) are very different.
 
@@ -286,3 +286,9 @@ It is interesting that a cloud computing platform like Heroku (not a byproduct) 
 17 August 2020
 
 I am busy preparing for a test on HackerRank ahead of a job interview. I am noticing how the more I prepare the more I hope that I will get the job. I have invested time in this company now and I want it to pay off. I think it is a very good idea to ask applicants to complete programming assignments.
+
+# Pure functions are easy to test. This applies to microservices too.
+
+23 December 2020
+
+Input, processing, output. This is easy to reason about, easy to test and easy to maintain. I am working on a service that takes an input, calls out to several rest APIs to get additional data and finally writes some data to a database. In order for the service to work I need to make two API calls to get the APIs into the right state. It is a real pain. Much easier to just pass all the data in as input.
