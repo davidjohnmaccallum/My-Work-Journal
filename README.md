@@ -292,3 +292,9 @@ I am busy preparing for a test on HackerRank ahead of a job interview. I am noti
 23 December 2020
 
 Input, processing, output. This is easy to reason about, easy to test and easy to maintain. I am working on a service that takes an input, calls out to several rest APIs to get additional data and finally writes some data to a database. In order for the service to work I need to make two API calls to get the APIs into the right state. It is a real pain. Much easier to just pass all the data in as input.
+
+# Aliases as stepping stones
+
+24 December 2020
+
+We are moving our code to Kubernetes and we are all having to learn kubectl, stern, helm etc. A colleague has created a set of very useful command line aliases (shortcuts) for common tasks. They are great because they get you up and running quickly and at the same time they teach you how to use the tools.
